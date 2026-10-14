@@ -2,14 +2,14 @@
 Random rnd2 = new Random();
 string playerChoice = "";
 int playerNumber = 0;
-
+string name = " ";
 do
 {
     Console.Write("1-Human 2-Computer: ");
     playerChoice = Console.ReadLine();
     if (!int.TryParse(playerChoice, out playerNumber) || string.IsNullOrEmpty(playerChoice))
     {
-        Console.WriteLine("Please enter a valide number");
+        Console.WriteLine("Please enter a valid number");
 
     }
     else if (playerNumber > 2 || playerNumber < 0)
@@ -22,6 +22,15 @@ switch (playerNumber)
 {
     case 1:
         player = " Human";
+        do
+        {
+            Console.Write("Enter your name: ");
+            name = Console.ReadLine();
+            if (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("Invalide name please enter your name again: ");
+            }                
+        } while (string.IsNullOrEmpty(name));
         break;
     case 2:
         player = " Computer";
@@ -114,11 +123,12 @@ do
 
 Console.WriteLine("Game Mode");
 Console.WriteLine("-------------");
-Console.WriteLine($"Player   : {player}");
-Console.WriteLine($"Symbols  : {typeOfSymbols}");
+Console.WriteLine($"Player: {player}");
+if (playerNumber == 1)
+    Console.WriteLine($"Player name is: {name}");
+Console.WriteLine($"Symbols: {typeOfSymbols}");
 Console.WriteLine($"Number of symbols: {number}");
 Console.WriteLine($"Number of shifts :{shiftNumber}");
-Console.WriteLine();
 
 char x1 = ' ';
 char x2 = ' ';
@@ -129,7 +139,7 @@ char x6 = ' ';
 char x7 = ' ';
 char x8 = ' ';
 char x9 = ' ';
-
+ 
 char firstChar = 'A';
 char secondChar = 'B';
 char thirdChar = 'C';
@@ -144,7 +154,7 @@ int d = 0;
 int e = 0;
 int f = 0;
 
-// do nun içinde x i ilk önce seçip onu konuma atadıktan sonra dolu olup olmadıığını kontrol ediyoruz bu yüzden A B C bazen tam gelmiyor
+int round = 1;
 
 if (number == 1)
 {
@@ -3138,8 +3148,256 @@ else if (number == 6)
     }
 }
 
+char x11 = x1;
+char x12 = x2;
+char x13 = x3;
+char x14 = x4;
+char x15 = x5;
+char x16 = x6;
+char x17 = x7;
+char x18 = x8;
+char x19 = x9;
+
 Console.WriteLine();
 
+for (int i = 1; i <= shiftNumber; i++)
+{
+
+    int aiShift = rnd.Next(1, 13);
+
+    if (aiShift == 1)
+    {
+        if (x13 == ' ' && x12 == ' ' && x11 != ' ')
+        {
+            x13 = x11;
+            x11 = ' ';
+        }
+        if (x13 == ' ' && x12 != ' ')
+        {
+            x13 = x12;
+            x12 = ' ';
+        }
+        if (x12 == ' ' && x11 != ' ')
+        {
+            x12 = x11;
+            x11 = ' ';
+        }
+    }
+    else if (aiShift == 2)
+    {
+        if (x16 == ' ' && x15 == ' ' && x14 != ' ')
+        {
+            x16 = x14;
+            x14 = ' ';
+        }
+        if (x16 == ' ' && x15 != ' ')
+        {
+            x16 = x15;
+            x15 = ' ';
+        }
+        if (x15 == ' ' && x14 != ' ')
+        {
+            x15 = x14;
+            x14 = ' ';
+        }
+    }
+    else if (aiShift == 3)
+    {
+        if (x19 == ' ' && x18 == ' ' && x17 != ' ')
+        {
+            x19 = x17;
+            x17 = ' ';
+        }
+        if (x19 == ' ' && x18 != ' ')
+        {
+            x19 = x18;
+            x18 = ' ';
+        }
+        if (x18 == ' ' && x17 != ' ')
+        {
+            x18 = x17;
+            x17 = ' ';
+        }
+    }
+    else if (aiShift == 4)
+    {
+        if (x11 == ' ' && x12 == ' ' && x13 != ' ')
+        {
+            x11 = x13;
+            x13 = ' ';
+        }
+        if (x11 == ' ' && x12 != ' ')
+        {
+            x11 = x12;
+            x12 = ' ';
+        }
+        if (x12 == ' ' && x13 != ' ')
+        {
+            x12 = x13;
+            x13 = ' ';
+        }
+    }
+    else if (aiShift == 5)
+    {
+        if (x14 == ' ' && x15 == ' ' && x16 != ' ')
+        {
+            x14 = x16;
+            x16 = ' ';
+        }
+        if (x14 == ' ' && x15 != ' ')
+        {
+            x14 = x15;
+            x15 = ' ';
+        }
+        if (x15 == ' ' && x16 != ' ')
+        {
+            x15 = x16;
+            x16 = ' ';
+        }
+    }
+    else if (aiShift == 6)
+    {
+        if (x17 == ' ' && x18 == ' ' && x19 != ' ')
+        {
+            x17 = x19;
+            x19 = ' ';
+        }
+        if (x17 == ' ' && x18 != ' ')
+        {
+            x17 = x18;
+            x18 = ' ';
+        }
+        if (x18 == ' ' && x19 != ' ')
+        {
+            x18 = x19;
+            x19 = ' ';
+        }
+    }
+    else if (aiShift == 7)
+    {
+        if (x17 == ' ' && x14 == ' ' && x11 != ' ')
+        {
+            x17 = x11;
+            x11 = ' ';
+        }
+        if (x17 == ' ' && x14 != ' ')
+        {
+            x17 = x14;
+            x14 = ' ';
+        }
+        if (x14 == ' ' && x11 != ' ')
+        {
+            x14 = x11;
+            x11 = ' ';
+        }
+    }
+    else if (aiShift == 8)
+    {
+        if (x18 == ' ' && x15 == ' ' && x12 != ' ')
+        {
+            x18 = x12;
+            x12 = ' ';
+        }
+        if (x18 == ' ' && x15 != ' ')
+        {
+            x18 = x15;
+            x15 = ' ';
+        }
+        if (x15 == ' ' && x12 != ' ')
+        {
+            x15 = x12;
+            x12 = ' ';
+        }
+    }
+    else if (aiShift == 9)
+    {
+        if (x19 == ' ' && x16 == ' ' && x13 != ' ')
+        {
+            x19 = x13;
+            x13 = ' ';
+        }
+        if (x19 == ' ' && x16 != ' ')
+        {
+            x19 = x16;
+            x16 = ' ';
+        }
+        if (x16 == ' ' && x13 != ' ')
+        {
+            x16 = x13;
+            x13 = ' ';
+        }
+    }
+    else if (aiShift == 10)
+    {
+        if (x11 == ' ' && x14 == ' ' && x17 != ' ')
+        {
+            x11 = x17;
+            x17 = ' ';
+        }
+        if (x11 == ' ' && x14 != ' ')
+        {
+            x11 = x14;
+            x14 = ' ';
+        }
+        if (x14 == ' ' && x17 != ' ')
+        {
+            x14 = x17;
+            x17 = ' ';
+        }
+    }
+    else if (aiShift == 11)
+    {
+        if (x12 == ' ' && x15 == ' ' && x18 != ' ')
+        {
+            x12 = x18;
+            x18 = ' ';
+        }
+        if (x12 == ' ' && x15 != ' ')
+        {
+            x12 = x15;
+            x15 = ' ';
+        }
+        if (x15 == ' ' && x18 != ' ')
+        {
+            x15 = x18;
+            x18 = ' ';
+        }
+    }
+    else if (aiShift == 12)
+    {
+        if (x13 == ' ' && x16 == ' ' && x19 != ' ')
+        {
+            x13 = x19;
+            x19 = ' ';
+        }
+        if (x13 == ' ' && x16 != ' ')
+        {
+            x13 = x16;
+            x16 = ' ';
+        }
+        if (x16 == ' ' && x19 != ' ')
+        {
+            x16 = x19;
+            x19 = ' ';
+        }
+    }
+}
+
+Console.WriteLine("--- Target Board ---");
+Console.WriteLine();
+Console.WriteLine("   7  8  9  ");
+Console.WriteLine(" +---------+");
+Console.WriteLine($"1| {x11}  {x12}  {x13} |4");
+Console.WriteLine($" |         | ");
+Console.WriteLine($"2| {x14}  {x15}  {x16} |5");
+Console.WriteLine($" |         | ");
+Console.WriteLine($"3| {x17}  {x18}  {x19} |6");
+Console.WriteLine(" +---------+");
+Console.WriteLine("  10 11 12  ");
+
+Console.WriteLine();
+Console.WriteLine($"--- Round {round} ---");
+Console.WriteLine();
 Console.WriteLine("   7  8  9  ");
 Console.WriteLine(" +---------+");
 Console.WriteLine($"1| {x1}  {x2}  {x3} |4");
@@ -3149,12 +3407,17 @@ Console.WriteLine($" |         | ");
 Console.WriteLine($"3| {x7}  {x8}  {x9} |6");
 Console.WriteLine(" +---------+");
 Console.WriteLine("  10 11 12  ");
+round++;
 
+Console.WriteLine();
+
+int shiftchoicecounter = 1;
 bool start = true;
 while (start)
 {
     Console.Write("Type a number: ");
     int shiftchoice = Convert.ToInt32(Console.ReadLine());
+
     if (shiftchoice == 1)
     {
         if (x3 == ' ' && x2 == ' ' && x1 != ' ')
@@ -3371,13 +3634,43 @@ while (start)
             x9 = ' ';
         }
     }
+
+    for (int i = 0; i < 17; i++)
+    {
+        Console.WriteLine();
+    }
+
+    Console.WriteLine("--- Target Board ---");
+    Console.WriteLine();
+    Console.WriteLine("   7  8  9  ");
+    Console.WriteLine(" +---------+");
+    Console.WriteLine($"1| {x11}  {x12}  {x13} |4");
+    Console.WriteLine($" |         | ");
+    Console.WriteLine($"2| {x14}  {x15}  {x16} |5");
+    Console.WriteLine($" |         | ");
+    Console.WriteLine($"3| {x17}  {x18}  {x19} |6");
+    Console.WriteLine(" +---------+");
+    Console.WriteLine("  10 11 12  ");
+    Console.WriteLine($"--- Round {round} ---");
+
+    Console.WriteLine();
     Console.WriteLine("   7  8  9  ");
     Console.WriteLine(" +---------+");
     Console.WriteLine($"1| {x1}  {x2}  {x3} |4");
     Console.WriteLine($" |         | ");
     Console.WriteLine($"2| {x4}  {x5}  {x6} |5");
     Console.WriteLine($" |         | ");
-    Console.WriteLine($"3| {x7}  {x8}  {x9} |6");
+    Console.WriteLine($"3| {x7}  {x8}  {x9} |6" + ($"        Shift: {shiftchoicecounter} "));
     Console.WriteLine(" +---------+");
     Console.WriteLine("  10 11 12  ");
+    round++;
+    shiftchoicecounter++;
+
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine();
 }
+
+
+

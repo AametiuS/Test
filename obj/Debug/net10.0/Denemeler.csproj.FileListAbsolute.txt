@@ -13,3 +13,4 @@ D:\Denemeler\Denemeler\obj\Debug\net10.0\Denemeler.pdb
 D:\Denemeler\Denemeler\obj\Debug\net10.0\Denemeler.genruntimeconfig.cache
 D:\Denemeler\Denemeler\obj\Debug\net10.0\ref\Denemeler.dll
 D:\Denemeler\Denemeler\obj\Debug\net10.0\Denemeler.csproj.Up2Date
+D:\Denemeler\Denemeler\obj\Debug\net10.0\Denemeler.sourcelink.json
