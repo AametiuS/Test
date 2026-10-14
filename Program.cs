@@ -1,38 +1,38 @@
 ﻿Random rnd = new Random();
 Random rnd2 = new Random();
 string playerChoice = "";
-int playerNumber = 0;
-string name = " ";
+int playerChoiceNumber = 0;
+string PlayerName = " ";
 int boardScore = 0;
 // menülerde kullanıcılardan girdiler aldık ve bunların hatalarını düşünerek oyunun kapanmaması için hata denetlemesi yaptık
 do
 {
     Console.Write("1-Human 2-Computer: ");
     playerChoice = Console.ReadLine();
-    if (!int.TryParse(playerChoice, out playerNumber) || string.IsNullOrEmpty(playerChoice))
+    if (!int.TryParse(playerChoice, out playerChoiceNumber) || string.IsNullOrEmpty(playerChoice))
     {
         Console.WriteLine("Please enter a valid number");
 
     }
-    else if (playerNumber > 2 || playerNumber < 0)
+    else if (playerChoiceNumber > 2 || playerChoiceNumber < 0)
     {
         Console.WriteLine("Please enter a number between 1-2");
     }
-} while ((!int.TryParse(playerChoice, out playerNumber) || string.IsNullOrEmpty(playerChoice)) || (playerNumber > 2 || playerNumber < 0));
+} while ((!int.TryParse(playerChoice, out playerChoiceNumber) || string.IsNullOrEmpty(playerChoice)) || (playerChoiceNumber > 2 || playerChoiceNumber < 0));
 string player = "";
-switch (playerNumber)
+switch (playerChoiceNumber)
 {
     case 1:
         player = " Human";
         do
         {
             Console.Write("Enter your name: ");
-            name = Console.ReadLine();
-            if (string.IsNullOrEmpty(name))
+            PlayerName = Console.ReadLine();
+            if (string.IsNullOrEmpty(PlayerName))
             {
                 Console.WriteLine("Invalide name please enter your name again: ");
             }                
-        } while (string.IsNullOrEmpty(name));
+        } while (string.IsNullOrEmpty(PlayerName));
         break;
     case 2:
         player = " Computer";
@@ -45,26 +45,26 @@ char C = 'C';
 char D = 'D';
 char E = 'E';
 
-string type = "";
-int typeChoice = 0;
+string CharType = "";
+int CharTypeChoiceNumber = 0;
 
 do
 {
     Console.Write("Enter number of types of symbols between 1 - 5: ");
-    type = Console.ReadLine();
-    if (!int.TryParse(type, out typeChoice) || string.IsNullOrEmpty(type))
+    CharType = Console.ReadLine();
+    if (!int.TryParse(CharType, out CharTypeChoiceNumber) || string.IsNullOrEmpty(CharType))
     {
         Console.WriteLine("Please enter a valid option");
     }
-    else if (typeChoice > 5 || typeChoice < 1)
+    else if (CharTypeChoiceNumber > 5 || CharTypeChoiceNumber < 1)
     {
         Console.WriteLine("Please enter a number between 1-5");
     }
-} while ((typeChoice > 5 || typeChoice < 1));
+} while ((CharTypeChoiceNumber > 5 || CharTypeChoiceNumber < 1));
 
 string typeOfSymbols = "";
 
-switch (typeChoice)
+switch (CharTypeChoiceNumber)
 {
     case 1:
         typeOfSymbols = ($"{A}");
@@ -83,54 +83,54 @@ switch (typeChoice)
         break;
 }
 
-string numberChoice = "";
-int number = 0;
+string SymbolNumberCoice = "";
+int SymbolNumber = 0;
 do
 {
     Console.Write("Enter number of symbols between 1 - 6: ");
-    numberChoice = Console.ReadLine();
-    if (!int.TryParse(numberChoice, out number) || string.IsNullOrEmpty(numberChoice))
+    SymbolNumberCoice = Console.ReadLine();
+    if (!int.TryParse(SymbolNumberCoice, out SymbolNumber) || string.IsNullOrEmpty(SymbolNumberCoice))
     {
         Console.WriteLine("Enter a valid number");
     }
-    else if (number > 6 || number < 1)
+    else if (SymbolNumber > 6 || SymbolNumber < 1)
     {
         Console.WriteLine("Please Enter a number between 1-6");
     }
-    else if (number < typeChoice)
+    else if (SymbolNumber < CharTypeChoiceNumber)
     {
         Console.WriteLine("Number of symbols can not be less than number of types of symbols.");
     }
 
-} while ((!int.TryParse(numberChoice, out number) || string.IsNullOrEmpty(numberChoice)) || (number > 6 || number < 1) || (number < typeChoice));
+} while ((!int.TryParse(SymbolNumberCoice, out SymbolNumber) || string.IsNullOrEmpty(SymbolNumberCoice)) || (SymbolNumber > 6 || SymbolNumber < 1) || (SymbolNumber < CharTypeChoiceNumber));
 
-string shift = "";
-int shiftNumber = 0;
+string ShiftChoice = "";
+int ShiftChoiceNumber = 0;
 
 do
 {
     Console.Write("Enter a shift number between 1-20: ");
-    shift = Console.ReadLine();
-    if (!int.TryParse(shift, out shiftNumber) || string.IsNullOrEmpty(shift))
+    ShiftChoice = Console.ReadLine();
+    if (!int.TryParse(ShiftChoice, out ShiftChoiceNumber) || string.IsNullOrEmpty(ShiftChoice))
     {
         Console.WriteLine("Enter a valid nmber");
     }
-    else if (shiftNumber > 20 || shiftNumber < 1)
+    else if (ShiftChoiceNumber > 20 || ShiftChoiceNumber < 1)
     {
         Console.WriteLine("Please Enter a number between 1-20");
     }
-} while ((!int.TryParse(shift, out shiftNumber) || string.IsNullOrEmpty(shift)) || (shiftNumber > 20 || shiftNumber < 1));
+} while ((!int.TryParse(ShiftChoice, out ShiftChoiceNumber) || string.IsNullOrEmpty(ShiftChoice)) || (ShiftChoiceNumber > 20 || ShiftChoiceNumber < 1));
 
 
 
 Console.WriteLine("Game Mode");
 Console.WriteLine("-------------");
 Console.WriteLine($"Player: {player}");
-if (playerNumber == 1)
-    Console.WriteLine($"Player name is: {name}");
+if (playerChoiceNumber == 1)
+    Console.WriteLine($"Player name is: {PlayerName}");
 Console.WriteLine($"Symbols: {typeOfSymbols}");
-Console.WriteLine($"Number of symbols: {number}");
-Console.WriteLine($"Number of shifts :{shiftNumber}");
+Console.WriteLine($"Number of symbols: {SymbolNumber}");
+Console.WriteLine($"Number of shifts :{ShiftChoiceNumber}");
 
 char x1 = ' ';
 char x2 = ' ';
@@ -147,7 +147,7 @@ char secondChar = 'B';
 char thirdChar = 'C';
 char fourthChar = 'D';
 char fifthChar = 'E';
-
+//atadığımız kordinatların tekrar etmesini önlemek için kaydedip kontrol ediyoruz
 int x = 0;
 int a = 0;
 int b = 0;
@@ -158,7 +158,7 @@ int f = 0;
 
 int round = 1;
 //atadığımız kordinatlara atanmasını istediğimiz harfler istedik, kordinatların birbiri ile çakışmaması için denetleme yaptık
-if (number == 1)
+if (SymbolNumber == 1)
 {
 
     x = rnd.Next(1, 10);
@@ -193,9 +193,9 @@ if (number == 1)
             break;
     }
 }
-else if (number == 2)
+else if (SymbolNumber == 2)
 {
-    if (typeChoice == 1)
+    if (CharTypeChoiceNumber == 1)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -264,7 +264,7 @@ else if (number == 2)
                     break;
             }
     }
-    else if (typeChoice == 2)
+    else if (CharTypeChoiceNumber == 2)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -335,9 +335,9 @@ else if (number == 2)
     }
 }
 
-else if (number == 3)
+else if (SymbolNumber == 3)
 {
-    if (typeChoice == 1)
+    if (CharTypeChoiceNumber == 1)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -442,7 +442,7 @@ else if (number == 3)
                     break;
             }
     }
-    else if (typeChoice == 2)
+    else if (CharTypeChoiceNumber == 2)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -547,7 +547,7 @@ else if (number == 3)
                     break;
             }    
     }
-    else if (typeChoice == 3)
+    else if (CharTypeChoiceNumber == 3)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -653,9 +653,9 @@ else if (number == 3)
             }
     }
 }
-else if (number == 4)
+else if (SymbolNumber == 4)
 {
-    if (typeChoice == 1)
+    if (CharTypeChoiceNumber == 1)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -795,7 +795,7 @@ else if (number == 4)
                 break;
         }
     }
-    else if (typeChoice == 2)
+    else if (CharTypeChoiceNumber == 2)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -935,7 +935,7 @@ else if (number == 4)
                 break;
         }
     }
-    else if (typeChoice == 3)
+    else if (CharTypeChoiceNumber == 3)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -1075,7 +1075,7 @@ else if (number == 4)
                 break;
         }
     }
-    else if (typeChoice == 4)
+    else if (CharTypeChoiceNumber == 4)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -1217,9 +1217,9 @@ else if (number == 4)
     }
 
 }
-else if (number == 5)
+else if (SymbolNumber == 5)
 {
-    if (typeChoice == 1)
+    if (CharTypeChoiceNumber == 1)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -1394,7 +1394,7 @@ else if (number == 5)
                 break;
         }
     }
-    else if (typeChoice == 2)
+    else if (CharTypeChoiceNumber == 2)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -1569,7 +1569,7 @@ else if (number == 5)
                 break;
         }
     }
-    else if (typeChoice == 3)
+    else if (CharTypeChoiceNumber == 3)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -1744,7 +1744,7 @@ else if (number == 5)
                 break;
         }
     }
-    else if (typeChoice == 4)
+    else if (CharTypeChoiceNumber == 4)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -1919,7 +1919,7 @@ else if (number == 5)
                 break;
         }
     }
-    else if (typeChoice == 5)
+    else if (CharTypeChoiceNumber == 5)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -2096,9 +2096,9 @@ else if (number == 5)
     }
 
 }
-else if (number == 6)
+else if (SymbolNumber == 6)
 {
-    if (typeChoice == 1)
+    if (CharTypeChoiceNumber == 1)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -2308,7 +2308,7 @@ else if (number == 6)
                 break;
         }
     }
-    else if (typeChoice == 2)
+    else if (CharTypeChoiceNumber == 2)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -2518,7 +2518,7 @@ else if (number == 6)
                 break;
         }
     }
-    else if (typeChoice == 3)
+    else if (CharTypeChoiceNumber == 3)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -2728,7 +2728,7 @@ else if (number == 6)
                 break;
         }
     }
-    else if (typeChoice == 4)
+    else if (CharTypeChoiceNumber == 4)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -2938,7 +2938,7 @@ else if (number == 6)
                 break;
         }
     }
-    else if (typeChoice == 5)
+    else if (CharTypeChoiceNumber == 5)
     {
         x = rnd.Next(1, 10);
         a = x;
@@ -3149,7 +3149,7 @@ else if (number == 6)
         }
     }
 }
-
+//Bilgisayarın bulucağı kordinat ile oyuncunun boardındaki kordinatları eşleştiriyoruz
 char x11 = x1;
 char x12 = x2;
 char x13 = x3;
@@ -3162,7 +3162,7 @@ char x19 = x9;
 
 Console.WriteLine();
 // bilgisayarın kaydırma işlemini gerçekeştirebilmesi için bilgisayara ayrı bir değer atayarak oluşturmasını sağladık
-for (int i = 1; i <= shiftNumber; i++)
+for (int i = 1; i <= ShiftChoiceNumber; i++)
 {
 
     int aiShift = rnd.Next(1, 13);
@@ -3419,9 +3419,9 @@ bool start = true;
 while (start)
 {
     Console.Write("Type a number: ");
-    int shiftchoice = Convert.ToInt32(Console.ReadLine());
+    int PlayerShiftChoiceNumber = Convert.ToInt32(Console.ReadLine());
 
-    if (shiftchoice == 1)
+    if (PlayerShiftChoiceNumber == 1)
     {
         if (x3 == ' ' && x2 == ' ' && x1 != ' ')
         {
@@ -3439,7 +3439,7 @@ while (start)
             x1 = ' ';
         }
     }
-    else if (shiftchoice == 2)
+    else if (PlayerShiftChoiceNumber == 2)
     {
         if (x6 == ' ' && x5 == ' ' && x4 != ' ')
         {
@@ -3457,7 +3457,7 @@ while (start)
             x4 = ' ';
         }
     }
-    else if (shiftchoice == 3)
+    else if (PlayerShiftChoiceNumber == 3)
     {
         if (x9 == ' ' && x8 == ' ' && x7 != ' ')
         {
@@ -3475,7 +3475,7 @@ while (start)
             x7 = ' ';
         }
     }
-    else if (shiftchoice == 4)
+    else if (PlayerShiftChoiceNumber == 4)
     {
         if (x1 == ' ' && x2 == ' ' && x3 != ' ')
         {
@@ -3493,7 +3493,7 @@ while (start)
             x3 = ' ';
         }
     }
-    else if (shiftchoice == 5)
+    else if (PlayerShiftChoiceNumber == 5)
     {
         if (x4 == ' ' && x5 == ' ' && x6 != ' ')
         {
@@ -3511,7 +3511,7 @@ while (start)
             x6 = ' ';
         }
     }
-    else if (shiftchoice == 6)
+    else if (PlayerShiftChoiceNumber == 6)
     {
         if (x7 == ' ' && x8 == ' ' && x9 != ' ')
         {
@@ -3529,7 +3529,7 @@ while (start)
             x9 = ' ';
         }
     }
-    else if (shiftchoice == 7)
+    else if (PlayerShiftChoiceNumber == 7)
     {
         if (x7 == ' ' && x4 == ' ' && x1 != ' ')
         {
@@ -3547,7 +3547,7 @@ while (start)
             x1 = ' ';
         }
     }
-    else if (shiftchoice == 8)
+    else if (PlayerShiftChoiceNumber == 8)
     {
         if (x8 == ' ' && x5 == ' ' && x2 != ' ')
         {
@@ -3565,7 +3565,7 @@ while (start)
             x2 = ' ';
         }
     }
-    else if (shiftchoice == 9)
+    else if (PlayerShiftChoiceNumber == 9)
     {
         if (x9 == ' ' && x6 == ' ' && x3 != ' ')
         {
@@ -3583,7 +3583,7 @@ while (start)
             x3 = ' ';
         }
     }
-    else if (shiftchoice == 10)
+    else if (PlayerShiftChoiceNumber == 10)
     {
         if (x1 == ' ' && x4 == ' ' && x7 != ' ')
         {
@@ -3601,7 +3601,7 @@ while (start)
             x7 = ' ';
         }
     }
-    else if (shiftchoice == 11)
+    else if (PlayerShiftChoiceNumber == 11)
     {
         if (x2 == ' ' && x5 == ' ' && x8 != ' ')
         {
@@ -3619,7 +3619,7 @@ while (start)
             x8 = ' ';
         }
     }
-    else if (shiftchoice == 12)
+    else if (PlayerShiftChoiceNumber == 12)
     {
         if (x3 == ' ' && x6 == ' ' && x9 != ' ')
         {
@@ -3637,7 +3637,7 @@ while (start)
             x9 = ' ';
         }
     }
-    // kaydırdığımız harflere denk gelen kordinatların puanlarını hesapladık
+    //oyuncunun boardı ile target boardın eşit olup olmadığını karşılaştırıp puanı hesapladık
     boardScore = 0;
 
     if (x1 == x11)
@@ -3887,11 +3887,18 @@ while (start)
     //oyuncu target boardı oluşturduğunda oyun scorunu hesaplayıp kapanmasını sağladık
     if (x1 == x11 && x2 == x12 && x3 == x13 && x4 == x14 && x5 == x15 && x6 == x16 && x7 == x17 && x8 == x18 && x9 == x19)
     {
-        int gameScore = (10 * boardScore) + ((typeChoice * number) * (shiftNumber - shiftchoicecounter));
+        int gameScore = (10 * boardScore) + ((CharTypeChoiceNumber * SymbolNumber) * (ShiftChoiceNumber - shiftchoicecounter));
 
         Console.WriteLine($"Game score: {gameScore}");
         break;
     }
 }
-
-
+//playerChoice: oyuncu oynayacak oyuncuyu seçiyor
+//playerChoiceNumber: oyuncunun seçtiği oyuncuyu sayı olarak depoluyoruz
+//PlayerName: Oyuncunu ismini alıyoruz ve depoluyoruz
+//CharType: Oyuncunun hangi harfleri kullanacağını alıyoruz
+//CharTypeChoiceNumber:Oyuncunun hangi harfleri kullanacağını sayı olarak depoluyoruz
+//SymbolNumberCoice:Oyuncunun kaç tane sembol kullanacağını alıyoruz
+//SymbolNumber:Oyuncunun kaç tane sembol kullanacağını sayı olarak depoluyoruz
+//ShiftChoice:Oyuncudan kaç kez kaydırmasını istediğini alıyoruz
+//ShiftChoiceNumber:Oyuncudan kaç kez kaydırmasını istediğini sayı olarak depoluyoruz
