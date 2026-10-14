@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Denemeler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b391f3f870e2e51c76a697231053efc59b9f1dc6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bde088c26c0ae2f5cc7049831757348d4be43946")]
 [assembly: System.Reflection.AssemblyProductAttribute("Denemeler")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Denemeler")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

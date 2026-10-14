@@ -3,6 +3,8 @@ Random rnd2 = new Random();
 string playerChoice = "";
 int playerNumber = 0;
 string name = " ";
+int boardScore = 0;
+// menülerde kullanıcılardan girdiler aldık ve bunların hatalarını düşünerek oyunun kapanmaması için hata denetlemesi yaptık
 do
 {
     Console.Write("1-Human 2-Computer: ");
@@ -155,7 +157,7 @@ int e = 0;
 int f = 0;
 
 int round = 1;
-
+//atadığımız kordinatlara atanmasını istediğimiz harfler istedik, kordinatların birbiri ile çakışmaması için denetleme yaptık
 if (number == 1)
 {
 
@@ -3159,7 +3161,7 @@ char x18 = x8;
 char x19 = x9;
 
 Console.WriteLine();
-
+// bilgisayarın kaydırma işlemini gerçekeştirebilmesi için bilgisayara ayrı bir değer atayarak oluşturmasını sağladık
 for (int i = 1; i <= shiftNumber; i++)
 {
 
@@ -3382,7 +3384,7 @@ for (int i = 1; i <= shiftNumber; i++)
         }
     }
 }
-
+// burada bilgisayarın target board ile oyuncunun boardını ayrı bir yerde oyuncu kaydırma işlemini yaptığında target board değişmesin diye depoladık
 Console.WriteLine("--- Target Board ---");
 Console.WriteLine();
 Console.WriteLine("   7  8  9  ");
@@ -3413,6 +3415,7 @@ Console.WriteLine();
 
 int shiftchoicecounter = 1;
 bool start = true;
+// oyuncunun kaydırma işlemini yapması için boş ya da dolu olup olmadığını kontrol etmeye çalıştık
 while (start)
 {
     Console.Write("Type a number: ");
@@ -3634,12 +3637,223 @@ while (start)
             x9 = ' ';
         }
     }
+    // kaydırdığımız harflere denk gelen kordinatların puanlarını hesapladık
+    boardScore = 0;
+
+    if (x1 == x11)
+    {
+        if (x1 == firstChar)
+        {
+            boardScore += 1;
+        }
+        else if (x1 == secondChar)
+        {
+            boardScore += 2;
+        }
+        else if (x1 == thirdChar)
+        {
+            boardScore += 3;
+        }
+        else if (x1 == fourthChar)
+        {
+            boardScore += 4;
+        }
+        else if (x1 == fifthChar)
+        {
+            boardScore += 5;
+        }
+    }
+    if (x3 == x13)
+    {
+        if (x3 == firstChar)
+        {
+            boardScore += 1;
+        }
+        else if (x3 == secondChar)
+        {
+            boardScore += 2;
+        }
+        else if (x3 == thirdChar)
+        {
+            boardScore += 3;
+        }
+        else if (x3 == fourthChar)
+        {
+            boardScore += 4;
+        }
+        else if (x3 == fifthChar)
+        {
+            boardScore += 5;
+        }
+    }
+    if (x5 == x15)
+    {
+        if (x5 == firstChar)
+        {
+            boardScore += 1;
+        }
+        else if (x5 == secondChar)
+        {
+            boardScore += 2;
+        }
+        else if (x5 == thirdChar)
+        {
+            boardScore += 3;
+        }
+        else if (x5 == fourthChar)
+        {
+            boardScore += 4;
+        }
+        else if (x5 == fifthChar)
+        {
+            boardScore += 5;
+        }
+    }
+    if (x7 == x17)
+    {
+        if (x7 == firstChar)
+        {
+            boardScore += 1;
+        }
+        else if (x7 == secondChar)
+        {
+            boardScore += 2;
+        }
+        else if (x7 == thirdChar)
+        {
+            boardScore += 3;
+        }
+        else if (x7 == fourthChar)
+        {
+            boardScore += 4;
+        }
+        else if (x7 == fifthChar)
+        {
+            boardScore += 5;
+        }
+    }
+
+    if (x2 == x12)
+    {
+        if (x2 == firstChar)
+        {
+            boardScore += 2;
+        }
+        else if (x2 == secondChar)
+        {
+            boardScore += 4;
+        }
+        else if (x2 == thirdChar)
+        {
+            boardScore += 6;
+        }
+        else if (x2 == fourthChar)
+        {
+            boardScore += 8;
+        }
+        else if (x2 == fifthChar)
+        {
+            boardScore += 10;
+        }
+    }
+    if (x4 == x14)
+    {
+        if (x4 == firstChar)
+        {
+            boardScore += 2;
+        }
+        else if (x4 == secondChar)
+        {
+            boardScore += 4;
+        }
+        else if (x4 == thirdChar)
+        {
+            boardScore += 6;
+        }
+        else if (x4 == fourthChar)
+        {
+            boardScore += 8;
+        }
+        else if (x4 == fifthChar)
+        {
+            boardScore += 10;
+        }
+    }
+    if (x6 == x16)
+    {
+        if (x6 == firstChar)
+        {
+            boardScore += 2;
+        }
+        else if (x6 == secondChar)
+        {
+            boardScore += 4;
+        }
+        else if (x6 == thirdChar)
+        {
+            boardScore += 6;
+        }
+        else if (x6 == fourthChar)
+        {
+            boardScore += 8;
+        }
+        else if (x6 == fifthChar)
+        {
+            boardScore += 10;
+        }
+    }
+    if (x8 == x18)
+    {
+        if (x8 == firstChar)
+        {
+            boardScore += 2;
+        }
+        else if (x8 == secondChar)
+        {
+            boardScore += 4;
+        }
+        else if (x8 == thirdChar)
+        {
+            boardScore += 6;
+        }
+        else if (x8 == fourthChar)
+        {
+            boardScore += 8;
+        }
+        else if (x8 == fifthChar)
+        {
+            boardScore += 10;
+        }
+    }
+    if (x5 == x15)
+    {
+        if (x5 == firstChar)
+        {
+            boardScore += 4;
+        }
+        else if (x5 == secondChar)
+        {
+            boardScore += 8;
+        }
+        else if (x5 == thirdChar)
+        {
+            boardScore += 12;
+        }
+        else if (x5 == fourthChar)
+        {
+            boardScore += 16;
+        }
+        else if (x5 == fifthChar)
+        {
+            boardScore += 20;
+        }
+    }
 
     for (int i = 0; i < 17; i++)
     {
         Console.WriteLine();
     }
-
+    //oyuncuya aynı anda hem target hemde player boardı göstererek oyuncuya rahatlık sağladık
     Console.WriteLine("--- Target Board ---");
     Console.WriteLine();
     Console.WriteLine("   7  8  9  ");
@@ -3656,7 +3870,7 @@ while (start)
     Console.WriteLine();
     Console.WriteLine("   7  8  9  ");
     Console.WriteLine(" +---------+");
-    Console.WriteLine($"1| {x1}  {x2}  {x3} |4");
+    Console.WriteLine($"1| {x1}  {x2}  {x3} |4" + ($"        Board Score: {boardScore} "));
     Console.WriteLine($" |         | ");
     Console.WriteLine($"2| {x4}  {x5}  {x6} |5");
     Console.WriteLine($" |         | ");
@@ -3670,7 +3884,14 @@ while (start)
     Console.WriteLine();
     Console.WriteLine();
     Console.WriteLine();
-}
+    //oyuncu target boardı oluşturduğunda oyun scorunu hesaplayıp kapanmasını sağladık
+    if (x1 == x11 && x2 == x12 && x3 == x13 && x4 == x14 && x5 == x15 && x6 == x16 && x7 == x17 && x8 == x18 && x9 == x19)
+    {
+        int gameScore = (10 * boardScore) + ((typeChoice * number) * (shiftNumber - shiftchoicecounter));
 
+        Console.WriteLine($"Game score: {gameScore}");
+        break;
+    }
+}
 
 
